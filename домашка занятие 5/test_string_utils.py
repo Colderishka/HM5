@@ -155,4 +155,4 @@ def test_positive_list_to_string( line, simbol, result ):
 def test_negative_list_to_string( line, simbol, result ):
     stringutils = StringUtils()
     res = stringutils.list_to_string(line, simbol)
-    assert res == result
+    assert res == result 

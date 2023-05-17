@@ -116,4 +116,4 @@ class StringUtils:
         for i in range(0, length-1):
             string += str(lst[i]) + joiner
         
-        return string + str(lst[-1])
+        return string + str(lst[-1]) 
