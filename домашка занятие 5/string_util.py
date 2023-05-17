@@ -1,8 +1,6 @@
-
 class StringUtils:
     
     #Класс с полезными утилитами для обработки и анализа строк
-    
     
     def capitilize(self, string: str) -> str:
         
@@ -117,7 +115,6 @@ class StringUtils:
             string += str(lst[i]) + joiner
         
         return string + str(lst[-1]) 
-    
 
 
     
