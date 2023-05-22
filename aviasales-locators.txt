@@ -1,7 +1,7 @@
 Локатор логотипа - $("a.s__sFI433zopwKCZzUeA3vj")
 Локатор поля Откуда - $("#origin")
 Локатор поля Куда - $("#destination")
-Локатор поля Когда - $(".trip-duration__date-input")
+Локатор поля Когда - $$('[placeholder="Когда"]') #измененное 
 Локатор поля Обратно - $('[data-test-id="return-date-field"]')
 Локатор чек-бокса - $("label.of_input_checkbox__label") 
 Локатор кнопки Найти билеты - $("[data-test-id=form-submit]")
