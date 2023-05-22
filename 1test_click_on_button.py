@@ -14,6 +14,10 @@ search_button_location = '[onclick="addElement()"]'
 search_button = driver.find_element(By.CSS_SELECTOR, search_button_location)
 for i in range(5):
     search_button.send_keys(Keys.RETURN)
+search_list = '[class="added-manually"]'
+search_list_for_print = driver.find_elements(By.CSS_SELECTOR, search_list)
+print(len(search_list_for_print))
+
 
 driver = webdriver.Chrome(service=ChromeService(
     ChromeDriverManager().install()))
@@ -22,8 +26,6 @@ search_button_location = '[onclick="addElement()"]'
 search_button = driver.find_element(By.CSS_SELECTOR, search_button_location)
 for i in range(5):
     search_button.send_keys(Keys.RETURN)
-
 search_list = '[class="added-manually"]'
 search_list_for_print = driver.find_elements(By.CSS_SELECTOR, search_list)
 print(len(search_list_for_print))
-
