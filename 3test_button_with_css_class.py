@@ -7,16 +7,23 @@ from selenium.webdriver.common.keys import Keys
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.firefox.service import Service as GeckoService
 
-driver = webdriver.Firefox(
-    service=GeckoService(GeckoDriverManager().install()))
-driver.get("http://uitestingplayground.com/classattr")
-path_to_button = '//button[contains(@class, "btn-primary")]'
-search_blue_button = driver.find_element(By.XPATH, path_to_button)
-search_blue_button.send_keys(Keys.RETURN)
 
-driver = webdriver.Chrome(service=ChromeService(
-    ChromeDriverManager().install()))
-driver.get("http://uitestingplayground.com/classattr")
-path_to_button = '//button[contains(@class, "btn-primary")]'
-search_blue_button = driver.find_element(By.XPATH, path_to_button)
-search_blue_button.send_keys(Keys.RETURN)
+drivers = [
+    webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())),
+    webdriver.Firefox(service=GeckoService(GeckoDriverManager().install()))
+]
+
+
+def test_with_css():
+    for driver_name in drivers:
+        driver = driver_name
+        driver.get("http://uitestingplayground.com/classattr")
+        path_to_button = '//button[contains(@class, "btn-primary")]'
+        search_blue_button = driver.find_element(By.XPATH, path_to_button)
+        search_blue_button.send_keys(Keys.RETURN)
+        print("система отработала")
+        driver.close()
+        driver.quit()
+
+
+test_with_css()
